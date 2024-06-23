@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\DataController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DataController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,11 @@ Route::group(['middleware' => 'IsAdmin'], function () {
 
     // Auth
     Route::get('/admin/logout', [AuthController::class, 'logout']);
+    Route::get('/admin/profil', [AuthController::class, 'profil']);
+    Route::post('/admin/profil', [AuthController::class, 'updateprofil']);
+
+    // Dashboard
+    Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 
     // Data
     Route::get('/admin/data', [DataController::class, 'index']);
