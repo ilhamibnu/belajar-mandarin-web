@@ -12,9 +12,12 @@ class LandingController extends Controller
     public function index(Request $request)
     {
         $kategori = Kategori::all();
-
-        $id_kategori = $request->id_kategori;
         $input = $request->input;
+        if ($request->id_kategori) {
+            $id_kategori = $request->id_kategori;
+        } else {
+            $id_kategori = 'all';
+        }
 
         if ($id_kategori != 'all' & $input != null) {
             $data = Data::where('id_kategori', $id_kategori)->where('name', 'like', '%' . $input . '%')->get();
@@ -33,7 +36,21 @@ class LandingController extends Controller
 
         return view('landing.pages.index', [
             'data' => $data,
-            'kategori' => $kategori
+            'kategori' => $kategori,
+            'id_kategori' => $id_kategori,
+        ]);
+    }
+
+
+    public function detailKategori($id)
+    {
+        $kategori = Kategori::all();
+        $data = Data::where('id_kategori', $id)->get();
+
+        return view('landing.pages.index', [
+            'data' => $data,
+            'kategori' => $kategori,
+            'id_kategori' => $id,
         ]);
     }
 }

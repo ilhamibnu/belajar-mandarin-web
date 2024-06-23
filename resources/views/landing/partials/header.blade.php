@@ -76,11 +76,11 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Courses</a>
+                                    <li class="menu-item-has-children"><a href="#">Kategori</a>
                                         <ul class="sub-menu">
-                                            <li><a href="courses.html">All Courses</a></li>
-                                            <li><a href="course-details.html">Course Details</a></li>
-                                            <li><a href="lesson.html">Course Lesson</a></li>
+                                            @foreach ($kategori as $item )
+                                            <li><a href="/detail/kategori/{{ $item->id }}">{{ $item->name }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><a href="#">Pages</a>

@@ -25,6 +25,7 @@ Route::post('/admin/login', [AuthController::class, 'postlogin']);
 
 // Landing
 Route::get('/', [LandingController::class, 'index']);
+Route::get('/detail/kategori/{id}', [LandingController::class, 'detailKategori']);
 
 
 // middleware group

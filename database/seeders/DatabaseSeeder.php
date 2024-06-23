@@ -33,6 +33,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Benda',
         ]);
 
+        Kategori::create([
+            'name' => 'Hewan',
+        ]);
+
         Data::create([
             'name' => 'Buku',
             'name_mandarin' => '书',
@@ -239,6 +243,55 @@ class DatabaseSeeder extends Seeder
             'description' => 'Alat untuk membersihkan rambut',
             'image' => 'default.jpg',
             'id_kategori' => 1,
+        ]);
+
+
+        Data::create([
+            'name' => 'Kucing',
+            'name_mandarin' => '猫',
+            'description' => 'Hewan peliharaan yang lucu dan menggemaskan',
+            'image' => 'default.jpg',
+            'id_kategori' => 2,
+        ]);
+
+        Data::create([
+            'name' => 'Anjing',
+            'name_mandarin' => '狗',
+            'description' => 'Hewan peliharaan yang setia dan ramah',
+            'image' => 'default.jpg',
+            'id_kategori' => 2,
+        ]);
+
+        Data::create([
+            'name' => 'Burung',
+            'name_mandarin' => '鸟',
+            'description' => 'Hewan yang bisa terbang dan berkicau',
+            'image' => 'default.jpg',
+            'id_kategori' => 2,
+        ]);
+
+        Data::create([
+            'name' => 'Ikan',
+            'name_mandarin' => '鱼',
+            'description' => 'Hewan yang hidup di dalam air',
+            'image' => 'default.jpg',
+            'id_kategori' => 2,
+        ]);
+
+        Data::create([
+            'name' => 'Kuda',
+            'name_mandarin' => '马',
+            'description' => 'Hewan yang bisa berlari dengan cepat',
+            'image' => 'default.jpg',
+            'id_kategori' => 2,
+        ]);
+
+        Data::create([
+            'name' => 'Sapi',
+            'name_mandarin' => '牛',
+            'description' => 'Hewan yang menghasilkan susu dan daging',
+            'image' => 'default.jpg',
+            'id_kategori' => 2,
         ]);
     }
 }
