@@ -73,7 +73,9 @@ class DataController extends Controller
 
             // hapus image lama
             $data = Data::find($id);
-            unlink(public_path('images/' . $data->image));
+            if ($data->image != 'default.jpg') {
+                unlink(public_path('images/' . $data->image));
+            }
 
             // upload image
             $image = $request->file('image');

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\User\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ use App\Http\Controllers\DashboardController;
 // Auth
 Route::get('/admin/login', [AuthController::class, 'login']);
 Route::post('/admin/login', [AuthController::class, 'postlogin']);
+
+// Landing
+Route::get('/', [LandingController::class, 'index']);
 
 
 // middleware group
